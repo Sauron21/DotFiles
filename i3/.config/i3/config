@@ -159,3 +159,6 @@ bar {
 exec compton -b
 
 exec --no-startup-id pulseaudio --start
+
+#Start Polybar
+#exec_always --no-startup-id ~/.config/polybar/launch.sh
