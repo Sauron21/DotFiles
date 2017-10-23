@@ -164,7 +164,7 @@ exec_always --no-startup-id compton -b --vsync
 exec --no-startup-id pulseaudio --start
 
 #Start Polybar
-exec_always --no-startup-id ~/.config/polybar/polybar.sh
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 #i3 gaps
 for_window [class="^.*"] border pixel 2 
@@ -173,4 +173,4 @@ gaps outer 0
 
 #Audio Controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
-bindsym Xf86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 -5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
