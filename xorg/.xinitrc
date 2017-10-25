@@ -1,3 +1,3 @@
-#! /bin/bash
+#! /bin/zsh
+exec feh -bg-scale /home/chris/Downloads/wallpaper
 exec i3
-feh --bg-scale /home/chris/Downloads/wallpaper
