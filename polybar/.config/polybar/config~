@@ -21,7 +21,7 @@ alert = #bd2c40
 [bar/example]
 monitor = ${env:MONITOR}
 width = 100%
-height = 19 
+height = 20 
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 0

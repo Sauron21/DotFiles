@@ -1,0 +1,20 @@
+mkdir
+self.fm.thistab.get_selection
+touch test
+open_with 
+open_with d
+open_with ldD
+touch chris
+rename test
+rename chris
+mkdir test
+mkdir chris
+mkdir home
+;
+search 
+mkdir Backgrounds
+rename low_poly_planet
+rename low_poly_planet.png
+shell S
+shell 
+delete
