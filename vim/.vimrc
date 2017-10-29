@@ -1,8 +1,17 @@
+"General settings
 set number
 syntax on
 set autoindent
 set foldmethod=syntax
 set foldcolumn=3
+
+"Key remappings
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
+nnoremap ; :
+nnoremap : ;
+imap jk <esc>
+
 "Plug
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'

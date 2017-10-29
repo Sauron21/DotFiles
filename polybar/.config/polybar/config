@@ -40,7 +40,7 @@ padding-left = 0
 padding-right = 2
 
 module-margin-left = 0
-module-margin-right = 2
+module-margin-right = 1
 
 font-0 = terminus:pixelsize=10;3
 font-1 = FontAwesome:fontformat=truetype:size=8:antialias=true;0;3
@@ -92,7 +92,7 @@ interval = 25
 
 mount-0 = /
 
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-mounted = | %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
@@ -190,7 +190,7 @@ interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
-label = %percentage%%
+label = | %percentage%%
 
 [module/memory]
 type = internal/memory
@@ -198,14 +198,14 @@ interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
-label = %percentage_used%%
+label = | %percentage_used%%
 
 [module/wlan]
 type = internal/network
 interface = wlp4s0
 interval = 3.0
 
-format-connected = <ramp-signal> <label-connected>
+format-connected = | <ramp-signal> <label-connected>
 format-connected-underline = #9f78e1
 label-connected = %essid%
 
@@ -230,7 +230,7 @@ interval = 3.0
 format-connected-underline = #55aa55
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
+label-connected = | %local_ip%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -243,9 +243,9 @@ type = internal/date
 interval = 5
 
 date =
-date-alt = " %Y-%m-%d"
+date-alt = | %Y-%m-%d
 
-time = %I:%M %p
+time = | %I:%M %p
 time-alt = 
 
 format-prefix = 
@@ -258,12 +258,12 @@ label = %date% %time%
 type = internal/volume
 
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL
+label-volume = | VOL
 label-volume-foreground = ${root.foreground}
 
 format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
+label-muted = | sound muted
 
 bar-volume-width = 5
 bar-volume-foreground-0 = #55aa55
@@ -287,11 +287,13 @@ type = internal/battery
 battery = BAT0
 adapter = ADP1
 full-at = 98
-
-format-charging = <animation-charging> <label-charging>
+time-format = %H:%M
+label-charging = %percentage%% %time%
+label-discharging = %percentage%% %time% 
+format-charging = | <animation-charging> <label-charging> 
 ;format-charging-underline = #ffb52a
 format-charging-underline = 
-format-discharging = <ramp-capacity> <label-discharging>
+format-discharging = | <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
 format-full-prefix = " "
@@ -301,11 +303,12 @@ format-full-underline = ${self.format-charging-underline}
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
-ramp-capacity-3 = 
+
 ramp-capacity-4 = 
 ramp-capacity-foreground = ${colors.foreground-alt}
 
 animation-charging-0 = 
+;animation-charging-0 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
@@ -319,8 +322,8 @@ format-underline = #f50a4d
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
-label = %temperature%
-label-warn = %temperature%
+label = | %temperature%
+label-warn = | %temperature%
 label-warn-foreground = ${colors.secondary}
 
 ramp-0 = 
@@ -332,28 +335,25 @@ ramp-foreground = ${colors.foreground-alt}
 type = custom/menu
 
 format-spacing = 1
-
-label-open = 
+label-open = %{F#e8e8e8}| %{F#e60053} %{F#e8e8e8}|
+label-close = %{F#e8e8e8}| %{F#e60053}Cancel
 label-open-foreground = ${colors.secondary}
-label-close =  cancel
 label-close-foreground = ${colors.secondary}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
-menu-0-0 = reboot
+menu-0-0 = Reboot
 menu-0-0-exec = menu-open-1
-menu-0-1 = power off
+menu-0-1 = Shutdown |
 menu-0-1-exec = menu-open-2
 
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
+menu-1-0 = Are you sure?
+menu-1-1 = Yes Reboot |
 menu-1-1-exec = sudo reboot
 
-menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
+menu-2-1 = Are you sure? |
+menu-2-0 = Yes Shutdown 
+menu-2-0-exec = sudo poweroff 
 
 [settings]
 screenchange-reload = true

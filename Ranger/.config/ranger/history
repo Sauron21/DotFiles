@@ -20,3 +20,4 @@ shell
 delete
 clones
 mkdir clones
+touch modprobe.conf
