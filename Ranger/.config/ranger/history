@@ -17,7 +17,7 @@ rename low_poly_planet
 rename low_poly_planet.png
 shell S
 shell 
-delete
 clones
 mkdir clones
 touch modprobe.conf
+delete
