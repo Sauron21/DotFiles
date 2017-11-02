@@ -44,7 +44,7 @@ module-margin-right = 1
 
 font-0 = terminus:pixelsize=10;3
 font-1 = FontAwesome:fontformat=truetype:size=8:antialias=true;0;3
-font-2 = siji:pixelsize=10;3
+font-2 = WunconSiji:pixelsize=8:antiaalias=true;0;3
 
 modules-left = i3
 modules-center = mpd 
@@ -187,10 +187,10 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = "|  "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
-label = | %percentage%%
+label = %percentage%%
 
 [module/memory]
 type = internal/memory
@@ -209,17 +209,18 @@ format-connected = | <ramp-signal> <label-connected>
 format-connected-underline = #9f78e1
 label-connected = %essid%
 
+ramp-signal-font = 2
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+
 format-disconnected =
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/wlan1]
@@ -237,11 +238,10 @@ format-disconnected =
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
 ramp-signal-foreground = ${colors.foreground-alt}
 
 
@@ -271,8 +271,8 @@ date-alt = | %Y-%m-%d
 time = | %I:%M %p
 time-alt = 
 
-format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
+;format-prefix = 
+;format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
 
 label = %date% %time%
@@ -284,9 +284,9 @@ format-volume = <label-volume> <bar-volume>
 label-volume = | VOL
 label-volume-foreground = ${root.foreground}
 
-format-muted-prefix = " "
+format-muted-prefix = "|   "
 format-muted-foreground = ${colors.foreground-alt}
-label-muted = | sound muted
+label-muted = sound muted
 
 bar-volume-width = 5
 bar-volume-foreground-0 = #55aa55
@@ -319,7 +319,7 @@ format-charging-underline =
 format-discharging = | <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
+format-full-prefix =  
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
@@ -330,8 +330,8 @@ ramp-capacity-2 = 
 ramp-capacity-4 = 
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 = 
-;animation-charging-0 = 
+;animation-charging-0 = 
+animation-charging-0 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
@@ -340,9 +340,9 @@ type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
 
-format = <ramp> <label>
+format = <label>
 format-underline = #f50a4d
-format-warn = <ramp> <label-warn>
+format-warn = <label-warn>
 format-warn-underline = ${self.format-underline}
 
 label = | %temperature%
@@ -371,11 +371,11 @@ menu-0-1 = Shutdown |
 menu-0-1-exec = menu-open-2
 
 menu-1-0 = Are you sure?
-menu-1-1 = Yes Reboot |
+menu-1-1 = Yes, Reboot |
 menu-1-1-exec = sudo reboot
 
 menu-2-1 = Are you sure? |
-menu-2-0 = Yes Shutdown 
+menu-2-0 = Yes, Shutdown 
 menu-2-0-exec = sudo poweroff 
 
 [settings]
