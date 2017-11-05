@@ -20,5 +20,5 @@ shell
 clones
 mkdir clones
 touch modprobe.conf
-delete
 linemode
+delete

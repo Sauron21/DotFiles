@@ -181,7 +181,7 @@ bindsym $sup+XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DE
 #Media Controls
 bindsym XF86AudioPrev exec mpc prev
 bindsym XF86AudioNext exec mpc next
-bindsym $mod+Down exec mpc toggle
+bindsym XF86AudioPause exec mpc toggle
 
 #Screen Brightness Controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 
@@ -191,4 +191,5 @@ bindsym $sup+XF86MonBrightnessDown exec xbacklight -dec 5
 #Move workspace to next output
 bindsym $mod+x move workspace to output right
 
-exec_always feh --bg-scale ~/DotFiles/Backgrounds/LwPolyPlanet.png
+exec_always --no-startup-id feh --bg-scale ~/DotFiles/Backgrounds/LowPolyPlanet.png
+exec --no-startup-id mopidy
