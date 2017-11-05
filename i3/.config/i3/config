@@ -51,10 +51,10 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+#bindsym $mod+Left focus left
+#bindsym $mod+Down focus down
+#bindsym $mod+Up focus up
+#bindsym $mod+Right focus right
 
 # move focused window
 bindsym $mod+Shift+h move left
@@ -175,8 +175,20 @@ gaps outer 0
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym $sup+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1%
+bindsym $sup+XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1%
 
+#Media Controls
+bindsym XF86AudioPrev exec mpc prev
+bindsym XF86AudioNext exec mpc next
+bindsym $mod+Down exec mpc toggle
+
+#Screen Brightness Controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10 
+bindsym $sup+XF86MonBrightnessUp exec xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+bindsym $sup+XF86MonBrightnessDown exec xbacklight -dec 5
 #Move workspace to next output
 bindsym $mod+x move workspace to output right
 
-exec_always feh --bg-scale ~/DotFiles/Backgrounds/LowPolyPlanet.png
+exec_always feh --bg-scale ~/DotFiles/Backgrounds/LwPolyPlanet.png
