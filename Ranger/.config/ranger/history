@@ -22,3 +22,4 @@ mkdir clones
 touch modprobe.conf
 linemode
 delete
+touch mpris.sh

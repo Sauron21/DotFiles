@@ -179,9 +179,9 @@ bindsym $sup+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DE
 bindsym $sup+XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1%
 
 #Media Controls
-bindsym XF86AudioPrev exec mpc prev
-bindsym XF86AudioNext exec mpc next
-bindsym XF86AudioPause exec mpc toggle
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPause exec playerctl play-pause
 
 #Screen Brightness Controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 
