@@ -49,7 +49,7 @@ font-2 = WunconSiji:pixelsize=8:antialias=true;3
 
 modules-left = i3 
 modules-center = music
-modules-right = filesystem xbacklight volume cpu wlan wlan1 eth battery temperature date powermenu
+modules-right = filesystem xbacklight volume cpu temperature wlan wlan1 eth battery date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -81,7 +81,6 @@ format-prefix-underline = ${colors.secondary}
 
 label-layout = %layout%
 label-layout-underline = ${colors.secondary}
-
 label-indicator-padding = 2
 label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
@@ -233,7 +232,14 @@ interval = 3.0
 
 format-connected = | <ramp-signal> <label-connected>
 format-connected-underline = #9f78e1
-label-connected = %essid%
+label-connected-font = 2
+label-connected = %essid%  %upspeed%  %downspeed%
+
+ramp-signal-font = 2
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -241,12 +247,7 @@ format-disconnected =
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
 ramp-signal-foreground = ${colors.foreground-alt}
-
 
 [module/eth]
 type = internal/network

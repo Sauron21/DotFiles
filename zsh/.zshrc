@@ -91,3 +91,5 @@ fi
 source $ZSH/oh-my-zsh.sh
 autoload -Uz compinit
 compinit
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

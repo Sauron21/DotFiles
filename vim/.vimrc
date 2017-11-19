@@ -17,13 +17,13 @@ set numberwidth=4
 set splitbelow
 set splitright
 
-
 "Key remappings
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
 nnoremap ; :
 nnoremap : ;
 imap jk <esc>
+
 "Split navigation
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -37,7 +37,10 @@ Plug 'itchyny/lightline.vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
+Plug 'altercation/vim-colors-solarized'
 call plug#end()
+set background=dark
+colorscheme solarized
 
 "Nerdtree
 "Open on startup if no file specified
@@ -56,7 +59,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 set laststatus=2
 set noshowmode
 let g:lightline = {
-	\ 'colorscheme': 'wombat',
+	\ 'colorscheme': 'solarized', 
 	\ 'active': {
 	\ 	'left': [ [ 'mode', 'paste' ],
 	\ 	    	[ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
@@ -71,7 +74,7 @@ let g:lightline = {
 	\ }
 
 "Syntasic
-set statusline+=%#warningmsg#
+set statusline+=\ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
