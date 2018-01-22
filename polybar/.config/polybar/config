@@ -20,7 +20,7 @@ alert = #bd2c40
 
 [bar/example]
 monitor = ${env:MONITOR}
-;monitor = eDP1
+;monitor = LVDS-1
 width = 100%
 height = 19 
 ;offset-x = 1%
@@ -188,7 +188,7 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = "|  "
+format-prefix = "|  " 
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
 label = %percentage%%
@@ -361,7 +361,7 @@ ramp-foreground = ${colors.foreground-alt}
 type = custom/menu
 
 format-spacing = 1
-label-open = %{F#e8e8e8}| %{F#e60053} %{F#e8e8e8}|
+label-open = %{F#e8e8e8}| %{F#e60053}%{F#e8e8e8}|
 label-close = %{F#e8e8e8}| %{F#e60053}Cancel
 label-open-foreground = ${colors.secondary}
 label-close-foreground = ${colors.secondary}
