@@ -20,7 +20,7 @@ install-packages() {
 install-packages-yaourt() {
 	local packagesyaourt=''
 	#dektop enviroment
-	packagesyaourt+='polybar siji '
+	packagesyaourt+='polybar siji-git '
 	yaourt -Sy --noconfirm $packagesyaourt
 }
 
@@ -33,9 +33,9 @@ start-daemons() {
 }
 
 dotfiles() {
-	git clone https://github.com/Sauron21/DotFiles
+	#git clone https://github.com/Sauron21/DotFiles
 	stow Ranger i3 polybar vim xorg zsh termite
-	sudo stow -t / laptop
+	sudo stow -t / touchpad
 }
 
 setup-user-accounts() {
@@ -48,9 +48,9 @@ setup-user-accounts() {
 }
 
 timedatectl set-ntp true
-setup-user-accounts
-install-packages
-install-packages-yaourt
+#setup-user-accounts
+#install-packages
+#install-packages-yaourt
 dotfiles
 start-daemons
 #oh-my-zsh
