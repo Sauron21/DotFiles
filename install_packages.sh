@@ -30,7 +30,7 @@ start-daemons() {
 }
 dotfiles() {
 	###git clone https://github.com/Sauron21/DotFiles
-	stow Ranger i3 polybar vim xorg zsh
+	stow Ranger i3 polybar vim xorg zsh termite
 }
 
 timedatectl set-ntp true
