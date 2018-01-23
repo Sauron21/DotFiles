@@ -44,7 +44,7 @@ module-margin-left = 0
 module-margin-right = 1
 
 font-0 = terminus:pixelsize=9;3
-font-1 = FontAwesome:fontformat=truetype:size=8:antialias=true;0;3
+font-1 = FontAwesome5Free:style=Solid:fontformat=truetype:size=8:antialias=true;1;4
 font-2 = WunconSiji:pixelsize=8:antialias=true;3
 
 modules-left = i3 
@@ -361,7 +361,7 @@ ramp-foreground = ${colors.foreground-alt}
 type = custom/menu
 
 format-spacing = 1
-label-open = %{F#e8e8e8}| %{F#e60053}%{F#e8e8e8}|
+label-open = %{F#e8e8e8}| %{F#e60053} %{F#e8e8e8}|
 label-close = %{F#e8e8e8}| %{F#e60053}Cancel
 label-open-foreground = ${colors.secondary}
 label-close-foreground = ${colors.secondary}
