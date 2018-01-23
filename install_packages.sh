@@ -2,31 +2,34 @@
 install-packages() {
 	local packages=''
 	#fonts
-	packages+='terminus-font''ttf-dejavu'
+	packages+='terminus-font ttf-dejavu ttf-font-awesome '
 	#applications
-	packages+='firefox'
+	packages+='firefox '
 	#utilities
-	packages+='yaourt''zsh''ranger''termite''git''tlp''powertop''stow'
+	packages+='yaourt zsh ranger termite git tlp powertop stow gucharmap '
 	#services
-	packages+='wpa supplicant''dialog''xorg-xbacklight''ntp'
+	packages+='wpa_supplicant dialog xorg-xbacklight ntp feh
+	xf86-input-synaptics xf86-video-intel '
 	#desktop enviroment
-	packages+='xorg-server''xorg-xinit''xorg-server-utils''i3-gaps''dmenu'
+	packages+='xorg-server xorg-xinit i3-gaps dmenu '
+	#addons
+	packages+='zsh-completions zsh-syntax-highlighting '
 	sudo pacman -Sy --noconfirm $packages
 }
 install-packages-yaourt() {
-	local packages-yaourt=''
+	local packagesyaourt=''
 	#dektop enviroment
-	packages-yaourt+='polybar'
-	yaourt -Sy --noconfirm $packages-yaourt
+	packagesyaourt+='polybar '
+	yaourt -Sy --noconfirm $packagesyaourt
 }
 start-daemons() {
 	local daemons=''
-	daemons+='ntpdate.service''lightdm.service'
+	daemons+='ntpdate.service lightdm.service '
 	sudo systemctl enable $daemons
 	sudo systemctl start $daemons
 }
 dotfiles() {
-	git clone https://github.com/Sauron21/DotFiles
+	###git clone https://github.com/Sauron21/DotFiles
 	stow Ranger i3 polybar vim xorg zsh
 }
 
@@ -37,4 +40,5 @@ dotfiles
 start-daemons
 #oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
+#change shell to zsh
+chsh -s /bin/zsh
