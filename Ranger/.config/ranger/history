@@ -21,6 +21,8 @@ clones
 mkdir clones
 touch modprobe.conf
 linemode
-delete
 touch mpris.sh
 touch terminal.sh
+delete
+rename .zshrc
+open_with vim

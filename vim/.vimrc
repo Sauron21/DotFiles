@@ -2,8 +2,8 @@
 set number
 syntax on
 set autoindent
-set foldmethod=syntax
-set foldcolumn=3
+"set foldmethod=syntax
+"set foldcolumn=3
 let mapleader=","
 set undodir=~/.vim/undo//
 set backupdir=~/.vim/backup//
@@ -47,8 +47,8 @@ colorscheme solarized
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-noremap <F1> ;NERDTreeToggle<CR>
-noremap <F2> ;NERDTreeFocus<CR>
+nnoremap <F1> ;NERDTreeToggle<CR>
+nnoremap <F2> ;NERDTreeFocus<CR>
 let NERDTreeShowHidden=1
 let g:NetrwIsOpen=0
 
