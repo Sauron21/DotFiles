@@ -41,10 +41,10 @@ dotfiles() {
 	sudo stow -t / touchpad
 }
 
-install-packages
-install-packages-yaourt
-start-daemons
-timedatectl set-ntp true
+#install-packages
+#install-packages-yaourt
+#start-daemons
+#timedatectl set-ntp true
 #oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 #change shell to zsh
