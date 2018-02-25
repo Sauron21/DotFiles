@@ -23,6 +23,11 @@ touch modprobe.conf
 linemode
 touch mpris.sh
 touch terminal.sh
-delete
 rename .zshrc
 open_with vim
+mkdir und
+mkdir undo
+mkdir swap
+mkdir backup
+rename .wine1
+delete

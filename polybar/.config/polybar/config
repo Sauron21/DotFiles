@@ -311,6 +311,8 @@ label = %date% %time%
 [module/volume]
 type = internal/volume
 
+mapped = true
+
 format-volume = <label-volume>
 label-volume = | VOL %percentage%%
 label-volume-foreground = ${root.foreground}
