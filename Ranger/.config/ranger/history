@@ -24,10 +24,18 @@ linemode
 touch mpris.sh
 touch terminal.sh
 rename .zshrc
-open_with vim
 mkdir und
 mkdir undo
 mkdir swap
 mkdir backup
 rename .wine1
 delete
+touch startup.sh
+rename .startup
+open_with vim
+
+mkdir Financial Reports
+mkdir 2018
+mkdir 1. Jan
+mkdir 2. Feb
+open_with firefox

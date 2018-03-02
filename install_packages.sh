@@ -5,32 +5,43 @@ install-packages() {
 	#fonts
 	packages+='terminus-font ttf-dejavu ttf-font-awesome '
 	#applications
-	packages+='firefox libreoffice-fresh '
+	packages+='firefox libreoffice-fresh zathura zathura-pdf-mupdf
+	cherrytree speedcrunch '
 	#utilities
-	packages+='yaourt zsh ranger termite git tlp powertop stow gucharmap vim
-	pavucontrol cups '
+	packages+='yaourt zsh ranger termite git stow gucharmap vim
+	pavucontrol cups cronie lxappearance '
 	#services
-	packages+='wpa_supplicant dialog xorg-xbacklight ntp feh
-	xf86-input-synaptics xf86-video-intel compton wpa_actiond wireless_tools
+	packages+='wpa_supplicant dialog xorg-xbacklight ntp feh compton wpa_actiond wireless_tools
 	pulseaudio lightdm lightdm-gtk-greeter avahi hplip '
 	#desktop enviroment
 	packages+='xorg-server xorg-xinit i3-gaps dmenu '
+	#gtk themes
+	packages+='arc-solid-gtk-theme '
 	#addons
-	packages+='zsh-completions zsh-syntax-highlighting '
+	packages+='zsh-completions zsh-syntax-highlighting hunspell-en '
 	sudo pacman -Sy --noconfirm $packages
+	#laptops
+	packages+='xf86-video-intel xf86-input-synaptics tlp powertop
+	xorg-xbacklight'
 }
 
 install-packages-yaourt() {
 	local packagesyaourt=''
 	#dektop enviroment
-	packagesyaourt+='polybar siji-git wpa_supplicant_gui '
+	packagesyaourt+='polybar siji-git '
+	#applications
+	packagesyaourt+='gnucash-dev '
+	#utilities
+	packages+='wpa_supplicant_gui grive '
 	yaourt -Sy --noconfirm $packagesyaourt
 }
 
 start-daemons() {
 	local daemons=''
-	daemons+='ntpdate.service lightdm.service tlp.service tlp-sleep.service
-	netctl-auto@wlo1.service org.cups.cupsd.service avahi-daemon.service '
+	daemons+='ntpdate.service lightdm.service netctl-auto@wlo1.service
+	org.cups.cupsd.service avahi-daemon.service cronie.service '
+	#laptops
+	daemons+='tlp.service tlp-sleep.service'
 	sudo systemctl mask systemd-rfkill.service systemd-rfkill.socket
 	sudo systemctl enable $daemons
 	sudo systemctl start $daemons
