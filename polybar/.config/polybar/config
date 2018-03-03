@@ -43,7 +43,7 @@ padding-right = 2
 module-margin-left = 0
 module-margin-right = 1
 
-font-0 = terminus:pixelsize=9;3
+font-0 = terminus:pixelsize=9;2
 font-1 = FontAwesome5Free:style=Solid:fontformat=truetype:size=8:antialias=true;1;4
 font-2 = WunconSiji:pixelsize=8:antialias=true;3
 
