@@ -38,6 +38,7 @@ Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'altercation/vim-colors-solarized'
+Plug 'lervag/vimtex'
 call plug#end()
 set background=dark
 colorscheme solarized
