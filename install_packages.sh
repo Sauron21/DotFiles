@@ -107,7 +107,8 @@ install-packages() {
 	packages+='arc-solid-gtk-theme '
 	
 	#addons
-	packages+='zsh-completions zsh-syntax-highlighting hunspell-en '
+	packages+='zsh-completions zsh-syntax-highlighting hunspell-en
+	flashplugin'
 	
 	#laptops
 	if laptop == 'y'
