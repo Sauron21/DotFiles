@@ -94,11 +94,12 @@ install-packages() {
 	
 	#utilities
 	packages+='yaourt zsh ranger termite git stow gucharmap vim
-	pavucontrol cups cronie lxappearance '
+	pavucontrol cups cronie lxappearance network-manager-applet '
 	
 	#services
 	packages+='wpa_supplicant dialog xorg-xbacklight ntp feh compton wpa_actiond wireless_tools
-	pulseaudio lightdm lightdm-gtk-greeter avahi hplip '
+	pulseaudio lightdm lightdm-gtk-greeter avahi hplip networkmanager
+	playerctl '
 	
 	#desktop enviroment
 	packages+='xorg-server xorg-xinit i3-gaps dmenu '
@@ -131,7 +132,7 @@ install-packages-yaourt() {
 	packagesyaourt+='gnucash-dev '
 	
 	#utilities
-	packages+='wpa_supplicant_gui grive '
+	packages+='grive networkmanager-dmenu-git '
 	
 	echo "Installing Packages with yaourt"
 	yaourt -Sy --noconfirm $packagesyaourt
@@ -140,8 +141,8 @@ install-packages-yaourt() {
 start-daemons() {
 	local daemons=''
 	
-	daemons+='ntpdate.service lightdm.service netctl-auto@wlo1.service
-	org.cups.cupsd.service avahi-daemon.service cronie.service '
+	daemons+='ntpdate.service lightdm.service org.cups.cupsd.service
+	avahi-daemon.service cronie.service NetworkManager.service '
 	
 	#laptops
 	if laptop == 'y'

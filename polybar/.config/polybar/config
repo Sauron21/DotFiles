@@ -239,7 +239,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/wlan1]
 type = internal/network
-interface = enp3s0u1
+interface = wlp3s0u1
 interval = 3.0
 
 format-connected = | <ramp-signal> <label-connected>
@@ -440,6 +440,6 @@ interval = 2
 
 label = %output:0:70:...%
 exec = ~/.config/polybar/mpris.sh
-click-left = playerctl previous
-click-middle = playerctl play-pause
-click-right = playerctl next
+;click-left = playerctl previous
+;click-middle = playerctl play-pause
+;click-right = playerctl next

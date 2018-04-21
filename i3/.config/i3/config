@@ -194,3 +194,12 @@ exec_always --no-startup-id feh --bg-scale ~/DotFiles/Backgrounds/LowPolyPlanet.
 #exec --no-startup-id mopidy
 
 exec --no-startup-id i3-msg 'workspace 10; exec thunderbird; workspace 1'
+
+exec --no-startup-id i3-msg 'workspace 2; workspace 9; workspace 1'
+
+#Bindings for starting applications
+bindsym $sup+f exec firefox
+bindsym $sup+r exec termite -e ranger
+bindsym $sup+v exec termite -e vim
+bindsym $sup+s exec spotify
+bindsym $sup+w exec networkmanager_dmenu
