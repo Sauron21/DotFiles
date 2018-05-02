@@ -203,6 +203,7 @@ bindsym $sup+r exec termite -e ranger
 bindsym $sup+v exec termite -e vim
 bindsym $sup+s exec spotify
 bindsym $sup+w exec networkmanager_dmenu
+bindsym $sup+g exec gnucash
 
 #dropdown terminal
 exec --no-startup-id termite --name "dropdown"
