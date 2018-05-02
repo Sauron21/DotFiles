@@ -95,4 +95,6 @@ compinit
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 alias update="sudo pacman -Syyu --noconfirm"
-alias dotfiles="~/DotFiles/push.sh"
+alias push="~/DotFiles/push.sh"
+alias sync=" ~/DotFiles/sync.sh"
+alias pull="~/DotFiles/pull.sh"

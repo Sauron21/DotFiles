@@ -49,7 +49,7 @@ font-2 = WunconSiji:pixelsize=8:antialias=true;3
 
 modules-left = i3 
 modules-center = music
-modules-right = filesystem xbacklight volume cpu temperature wlan wlan1 wlan2 eth battery date powermenu
+modules-right = xbacklight volume cpu temperature wlan wlan1 wlan2 eth battery date powermenu
 
 ;tray-position = right
 ;tray-padding = 2
