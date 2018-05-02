@@ -92,6 +92,7 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open=1
 let g:syntastic_check_on_wq=0
 
+"Auto enter insert on git commit
 augroup filetype_gitcommit
 	autocmd!
 	autocmd FileType gitcommit 1 | startinsert
