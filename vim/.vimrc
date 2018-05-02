@@ -2,20 +2,28 @@
 set number
 syntax on
 set autoindent
-"set foldmethod=syntax
-"set foldcolumn=3
+set foldmethod=indent
+set nofoldenable
+set foldcolumn=0
 let mapleader=","
 set undodir=~/.vim/undo//
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 set ruler
+set relativenumber
 set showcmd
+set hlsearch
+set ignorecase
+set smartcase
+set wrap
+set cursorline
 set incsearch
 set nojoinspaces
 set textwidth=80
-set numberwidth=4
+set numberwidth=2
 set splitbelow
 set splitright
+set spell
 
 "Key remappings
 " Allow saving of files as sudo when I forgot to start vim using sudo.

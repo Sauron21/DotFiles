@@ -203,3 +203,14 @@ bindsym $sup+r exec termite -e ranger
 bindsym $sup+v exec termite -e vim
 bindsym $sup+s exec spotify
 bindsym $sup+w exec networkmanager_dmenu
+
+#dropdown terminal
+exec --no-startup-id termite --name "dropdown"
+bindsym $sup+Shift+Return exec --no-startup-id termite --name "dropdown"
+for_window [instance="dropdown"] move scratchpad
+for_window [instance="dropdown"] floating enable
+for_window [instance="dropdown"] resize set 40 ppt 30 ppt
+bindsym $mod+Shift+Return [instance="dropdown"] scratchpad show
+
+#Set window to default floating
+for_window [class="Thunderbird" instance="Msgcompose"] floating enable
