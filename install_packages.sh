@@ -15,7 +15,7 @@ user-options() {
 	echo "Install base system? (Y/N)"
 	read -p $'\e[1;36m>>> ' base
 
-	if base == 'y'
+	if [ $base == 'y' ]
 	then	
 		#root location?
 		echo "Enter root patition location"
@@ -44,7 +44,7 @@ user-options() {
 	echo "Install packages? (Y/N)"
 	read -p $'\e[1;36m>>> ' packages
 
-	if packages == 'y'
+	if [ $packages == 'y' ]
 	then
 	
 		#is a laptop?
@@ -56,13 +56,13 @@ user-options() {
 install-base() {
 	mount $root /mnt
 	
-	if home == 'y'
+	if [ $home == 'y' ]
 	then
 		mkdir /mnt/home
 		mount $homelocation /mnt/home
 	fi
 	
-	if boot == 'y'
+	if [ $boot == 'y' ]
 	then
 		mkdir /mnt/boot
 		mount $bootlocation /mnt/boot
@@ -112,7 +112,7 @@ install-packages() {
 	flashplugin'
 	
 	#laptops
-	if laptop == 'y'
+	if [ $laptop == 'y' ]
 	then
 		packages+='xf86-video-intel xf86-input-synaptics tlp powertop
 		xorg-xbacklight'
@@ -129,7 +129,7 @@ install-packages-yaourt() {
 	packagesyaourt+='polybar siji-git '
 	
 	#applications
-	packagesyaourt+='gnucash-dev '
+	packagesyaourt+='gnucash-dev spotify '
 	
 	#utilities
 	packages+='grive networkmanager-dmenu-git '
@@ -145,7 +145,7 @@ start-daemons() {
 	avahi-daemon.service cronie.service NetworkManager.service '
 	
 	#laptops
-	if laptop == 'y'
+	if [ $laptop == 'y' ]
 	then
 		daemons+='tlp.service tlp-sleep.service'
 	fi
@@ -159,7 +159,7 @@ start-daemons() {
 dotfiles() {
 	stow Ranger i3 polybar vim xorg zsh termite
 	
-	if laptop == 'y' 
+	if [ $laptop == 'y' ]
 	then
 		sudo stow -t / touchpad
 	fi
@@ -167,12 +167,12 @@ dotfiles() {
 
 user-options
 
-if base == 'y'
+if [ $base == 'y' ]
 then
 	install-base
 fi
 
-if packages == 'y'
+if [ $packages == 'y' ]
 then
 	install-packages
 	install-packages-yaourt
