@@ -195,6 +195,9 @@ exec_always --no-startup-id feh --bg-scale ~/DotFiles/Backgrounds/LowPolyPlanet.
 
 exec --no-startup-id i3-msg 'workspace 10; exec thunderbird; workspace 1'
 
+#exec --no-startup-id i3-msg 'workspace 9; exec qutebrowser todoist.com; workspace 1'
+#assign [class="qutebrowser"] $workspace9
+
 exec --no-startup-id i3-msg 'workspace 2; workspace 9; workspace 1'
 
 #Bindings for starting applications
@@ -215,3 +218,7 @@ bindsym $mod+Shift+Return [instance="dropdown"] scratchpad show
 
 #Set window to default floating
 for_window [class="Thunderbird" instance="Msgcompose"] floating enable
+
+#Reset pulseaudio
+exec killall pulseaudio
+exec systemctl --user start pulseaudio.service 

@@ -25,8 +25,10 @@ set splitbelow
 set splitright
 set spell
 
+filetype plugin indent on
+
 "Key remappings
-" Allow saving of files as sudo when I forgot to start vim using sudo.
+"Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
 nnoremap ; :
 nnoremap : ;
@@ -96,4 +98,12 @@ let g:syntastic_check_on_wq=0
 augroup filetype_gitcommit
 	autocmd!
 	autocmd FileType gitcommit 1 | startinsert
+augroup END
+
+"Leave insert after 15 seconds of no input
+augroup leaveinsertmode
+	autocmd!
+	autocmd CursorHoldI * stopinsert 
+	autocmd InsertEnter * let updaterestore=&updatetime | set updatetime=15000 
+	autocmd InsertLeave * let &updatetime=updaterestore 
 augroup END
